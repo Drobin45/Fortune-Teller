@@ -11,16 +11,16 @@ namespace Fortune_Teller
         static void Main(string[] args)
         {
             // Welcoming user message, and initializing primary 
-            // variable strings (first name, last name, age, and favorite ROYGBIV color) 
+            // variable strings (first name, last name, age, and favorite ROYGBIV color), 
             // and primary, variable intergers (birthmonth and number of siblings).
-            // Also, a helpful "Help" command has been added to inform our users what ROYGBIV is.
+            // Finally, a helpful "Help" command has been added to inform our users what ROYGBIV is.
 
             Console.WriteLine("Welcome to the delightful Fortune Teller program! \nHave fun and enjoy your fortune telling experience!\n");
 
             Console.WriteLine("Please input the following:");
             Console.WriteLine("Your first name");
             string firstName = Console.ReadLine();
-            
+
             Console.WriteLine("Your last name");
             string lastName = Console.ReadLine();
             
@@ -59,7 +59,7 @@ namespace Fortune_Teller
             }
 
             //Second fortune. Have the app tell the user where his/her vacation home is depending upon how many siblings he/she has.
-            // Answer for 0, 1, 2, 3, and >3. Also, if his/her input is less than 0, give him/her a bad vacation home!
+            //Answer for 0, 1, 2, 3, and >3. Also, if his/her input is less than 0, give him/her a bad vacation home!
             
             string vacation = "";
             if (siblings == 0)
@@ -88,7 +88,7 @@ namespace Fortune_Teller
             }                      
             
             //Third fortune. Have the app use the user's color choice to dictate what form of transportation he/she will have in the future.
-            
+                        
             string transportation = "";
             switch (lowerColor)
               {
@@ -139,6 +139,12 @@ namespace Fortune_Teller
             // Consolidate all outcomes to the final fortune telling sentence.
 
             Console.WriteLine(firstName + " " + lastName + " will retire in " + newAge + " years with " + bankMoney + " in the bank, a vaction home in " + vacation + " and " + transportation + "for transportation.");
+
+            //Final comment. Stretch goal of allowing the user to quit the program at any poinint in the application attempted
+            // with no success. Route attempted: discover what command will quite the program (google search brought up Environment.ExitCode();)
+            // but I was unsuccessful in finding out how to properly impliment any exit command.
+            // If the proper use of that command was discovered, it would be placed as a toLower() command option within 
+            // ever Console.Readline() command.
         }
     }
 }
