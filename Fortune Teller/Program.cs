@@ -13,20 +13,37 @@ namespace Fortune_Teller
             // Welcoming user message, and initializing primary 
             // variable strings (first name, last name, age, and favorite ROYGBIV color), 
             // and primary, variable intergers (birthmonth and number of siblings).
-            // Finally, a helpful "Help" command has been added to inform our users what ROYGBIV is.
+
+            // A helpful "Help" command has been added to inform our users what ROYGBIV is.
+
+            //Finally, a quit option has been implimented within every user string data input opportunity, with a small, scornful message attached.
 
             Console.WriteLine("Welcome to the delightful Fortune Teller program! \nHave fun and enjoy your fortune telling experience!\n");
 
             Console.WriteLine("Please input the following:");
             Console.WriteLine("Your first name");
             string firstName = Console.ReadLine();
+            string lowerFirstName = firstName.ToLower();           
 
+                if (lowerFirstName == "quit")
+            {
+                Console.WriteLine("Nobody likes a quitter...");
+                Environment.Exit(0);
+            }
+                                   
             Console.WriteLine("Your last name");
             string lastName = Console.ReadLine();
-            
+            string lowerLastName = lastName.ToLower();
+
+            if (lowerLastName == "quit")
+            {                
+                Console.WriteLine("Nobody likes a quitter...");
+                Environment.Exit(0);
+            }
+
             Console.WriteLine("Your age");
             int age = int.Parse(Console.ReadLine());
-
+                        
             Console.WriteLine("Number of siblings");
             int siblings = int.Parse(Console.ReadLine());
 
@@ -40,11 +57,23 @@ namespace Fortune_Teller
             {
                 Console.WriteLine("ROYGBIV stands for: red, orange, yellow, green, blue, indigo, and violet.");
             }
+                        
+            if (lowerHelp == "quit")
+            {                
+                Console.WriteLine("Nobody likes a quitter...");
+                Environment.Exit(0);
+            }
 
             Console.WriteLine("What is your favorite ROYGBIV color?");
             string color = Console.ReadLine();
             string lowerColor = color.ToLower();
-                        
+            
+            if (lowerColor == "quit")
+            {                
+                Console.WriteLine("Nobody likes a quitter...");
+                Environment.Exit(0);
+            }
+
             // First fortune: Have the app calculate when the user will retire based on if his/her age is even or odd.        
             // If the user's age is even, he/she will retire in 30 years, if his/her age is odd have them retire in 60 years.
 
@@ -140,11 +169,12 @@ namespace Fortune_Teller
 
             Console.WriteLine(firstName + " " + lastName + " will retire in " + newAge + " years with " + bankMoney + " in the bank, a vaction home in " + vacation + " and " + transportation + "for transportation.");
 
-            //Final comment. Stretch goal of allowing the user to quit the program at any poinint in the application attempted
-            // with no success. Route attempted: discover what command will quite the program (google search brought up Environment.ExitCode();)
-            // but I was unsuccessful in finding out how to properly impliment any exit command.
-            // If the proper use of that command was discovered, it would be placed as a toLower() command option within 
-            // ever Console.Readline() command.
+            // Final comment: While attempting the stretch goal, I was unable to discover how to impliment the quit option for
+            // when users were typing in int data as opposed to string data.
+            // Thus, the stretch goal was only partially met. 
+            // To reach this goal, I would need to discover how to allow users to type quit in
+            // a variable that is designated for int akin to how the Parse command allows for 
+            // int variables to be written in what is typically a string variable command. 
         }
     }
 }
